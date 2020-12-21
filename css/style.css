@@ -268,15 +268,13 @@ body main .section.phone-area .phone .phone-screen .body .send .btn {
   width: 1.125rem;
   border-radius: 50%;
   background: #3e2753;
-  display: flex;
-  justify-content: center;
-  padding: 0.2rem;
+  display: grid;
+  place-items: center;
 }
 
 @media (max-width: 640px) {
   body {
-    border: thin solid;
-    padding: 2rem 0;
+    padding: 3rem 0;
   }
   body::before, body::after {
     height: 50%;

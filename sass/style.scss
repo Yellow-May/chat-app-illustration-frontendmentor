@@ -267,9 +267,8 @@ body {
                   width: 1.125rem;
                   border-radius: 50%;
                   background: $Very-Dark-Desaturated-Violet-submit-button-background;
-                  display: flex;
-                  justify-content: center;
-                  padding: 0.2rem;
+                  display: grid;
+                  place-items: center;
                 }
               }
             }
