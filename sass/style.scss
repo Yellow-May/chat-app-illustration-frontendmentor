@@ -1,0 +1,283 @@
+@import "base";
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+
+  background: $Light-Grayish-Violet-app-background;
+
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 87.5%;
+    width: 35%;
+  }
+
+  &::before {
+    top: 0;
+    left: -7.5%;
+    background: linear-gradient($Light-Magenta, $Light-Violet 70%);
+
+    border-bottom-left-radius: 20rem;
+    border-bottom-right-radius: 20rem;
+  }
+
+  &::after {
+    bottom: 0;
+    right: -12.5%;
+    background: rgba($Pale-Violet-sub-heading-at-the-top-of-the-app-UI, 0.125);
+
+    border-top-left-radius: 20rem;
+    border-top-right-radius: 20rem;
+  }
+
+  main {
+    width: 70%;
+    height: 25rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .section {
+      width: 50%;
+      padding: 1rem;
+
+      h1 {
+        padding-bottom: 1.25rem;
+      }
+
+      p {
+        color: $Dark-Grayish-Violet-paragraph;
+        line-height: 1.5;
+        font-size: 0.8rem;
+      }
+
+      &.phone-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+
+        .phone {
+          height: 25rem;
+          width: 13rem;
+          padding: 0.5rem;
+          border-radius: 1.5rem;
+          position: relative;
+
+          background: $White;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1rem;
+            width: 50%;
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+            background: inherit;
+          }
+
+          .phone-screen {
+            height: 100%;
+            width: 100%;
+            border-radius: 1rem;
+            background: $Light-Grayish-Violet-app-background;
+
+            .head {
+              height: 16%;
+              width: 100%;
+              border-top-left-radius: inherit;
+              border-top-right-radius: inherit;
+              border-bottom-left-radius: 0.25rem;
+              border-bottom-right-radius: 0.25rem;
+              padding: 0.65rem;
+              padding-top: 1.75rem;
+              box-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 0.25rem;
+
+              background: linear-gradient(
+                to right,
+                $Light-Violet,
+                $Light-Magenta
+              );
+
+              .profile {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 0.25rem;
+
+                img {
+                  height: 1.5rem;
+                  width: 1.5rem;
+                  border-radius: 50%;
+                  border: thin solid $White;
+                }
+
+                .profile-info {
+                  h3 {
+                    font-size: 0.7rem;
+                    color: $White;
+                    padding-bottom: 0.125rem;
+                  }
+
+                  p {
+                    font-size: 0.4rem;
+                    color: $Pale-Violet-sub-heading-at-the-top-of-the-app-UI;
+                  }
+                }
+              }
+            }
+
+            .body {
+              width: 100%;
+              padding: 0.5rem 0.35rem;
+
+              .text {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding-bottom: 0.5rem;
+
+                .received,
+                .sent,
+                .option {
+                  font-size: 0.4rem;
+                  max-width: 65%;
+                  border-radius: 0.5rem;
+                  padding: 0.35rem;
+                  line-height: 1.3;
+                }
+
+                .received {
+                  background: rgba(
+                    $Pale-Violet-sub-heading-at-the-top-of-the-app-UI,
+                    0.35
+                  );
+                  color: $Moderate-Violet-chat-on-the-left;
+                  border-bottom-left-radius: 0;
+                }
+
+                .sent {
+                  align-self: flex-end;
+                  background: $White;
+                  color: $Desaturated-Dark-Violet-chat-on-the-right;
+                  border-bottom-right-radius: 0;
+                }
+
+                .sent-imgs {
+                  align-self: flex-end;
+                  display: flex;
+                  gap: 0.5rem;
+                  max-width: 70%;
+                  padding-top: 0.25rem;
+
+                  img {
+                    height: 2.125rem;
+                    width: 2.125rem;
+                    border-radius: 0.25rem;
+                  }
+                }
+
+                .option {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  gap: 0.25rem;
+                  border-bottom-left-radius: 0;
+                  background: linear-gradient(
+                    to left,
+                    $Light-Violet,
+                    $Light-Magenta
+                  );
+
+                  .checkbox {
+                    height: 0.75rem;
+                    width: 0.75rem;
+                    border-radius: 50%;
+                    position: relative;
+                    border: 0.1rem solid
+                      $Very-Light-Magenta-radio-button-outline;
+                  }
+
+                  .dur {
+                    width: calc(100% - 2.5rem);
+                    color: $Grayish-Blue-placeholder-text;
+                  }
+
+                  .price {
+                    color: $White;
+                    font-size: 0.625rem;
+                  }
+                }
+              }
+
+              .send {
+                width: 100%;
+                height: 1.5rem;
+                border-radius: 1.5rem;
+                position: relative;
+
+                background: $White;
+
+                input {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: none;
+                  border: none;
+                  outline: none;
+                  padding: 0 1.25rem;
+                  font-size: 0.5rem;
+
+                  &::placeholder {
+                    color: $Grayish-Blue-placeholder-text;
+                  }
+                }
+
+                .btn {
+                  position: absolute;
+                  right: 0.125rem;
+                  top: calc((100% - 1.125rem) / 2);
+                  height: 1.125rem;
+                  width: 1.125rem;
+                  border-radius: 50%;
+                  background: $Very-Dark-Desaturated-Violet-submit-button-background;
+                  display: flex;
+                  justify-content: center;
+                  padding: 0.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "mobile";
